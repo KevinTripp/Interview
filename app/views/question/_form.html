@@ -1,0 +1,19 @@
+
+<div class="new-question-form">
+	<%= form_for :question, url: {:action => "create"} do |f| %>
+
+		<div>
+			<%= f.label :question %>
+			<%= f.text_field :question %>
+		</div>
+		<%= f.fields_for :tag do |f| %>
+		<div>
+			<%= f.label :tag %>
+			<%= f.text_field :tag %>
+		</div>
+		<% end %>
+		<div class="button">
+				<%= f.submit %>
+		</div>
+	<% end %>
+</div>

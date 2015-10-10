@@ -1,0 +1,33 @@
+
+<% if flash[:success] %>
+	<div class="success">
+		<%= flash[:success] %>
+	</div>
+<% end %>
+
+<% if flash[:error] %>
+	<%= flash[:error] %>
+<% end %>
+
+<div class="controls">
+  <button class="new-question btn btn-success">New</button>
+</div>
+
+<div class="overlay"></div>
+
+<%= render 'form' %>
+<div class="tag-cloud">
+</div>
+<div class="question-wrapper">
+	<% @questions.each do |q| %>
+		<div>
+			<h3><%= q.question %></h3>
+			<h4>tags:</h4>
+				<% q.tags.each do |t| %>
+					<div class="tag">
+						<%= t.tag %>
+					</div>
+				<% end %>
+		</div>
+	<% end %>
+</div>
