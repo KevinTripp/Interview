@@ -13,3 +13,57 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(document).ready(function(){//protect the lemmings!
+	$('.new-question, .overlay, form::after').on('click',function(){
+		$('form').toggle();
+		$('.overlay').toggle();
+	});
+
+	$.ajax({
+		type:"GET",
+		url: "/tags",
+		dataType: "json",
+		success: function(data){
+			var tagHolder = $('.tag-cloud')
+			$.each(data, function(i,e){
+				var tag = $('<div/>').text(e.tag);
+				tagHolder.prepend(tag)
+			});
+		}
+	});
+
+	$('.tag-cloud div').on('click',function(){
+		$.ajax({
+		type:"GET",
+		url: "/tags",
+		dataType: "json",
+		success: function(data){
+			var tagHolder = $('.tag-cloud')
+			$.each(data, function(i,e){
+				var tag = $('<div/>').text(e.tag);
+				tagHolder.prepend(tag)
+			});
+		}
+	});
+	});
+
+	$('input[name="commit"]').hide();
+
+	$('input').on('blur',function(){
+
+	var complete;
+
+	$('input').each(function(){
+			if ($(this).val()){
+				complete = true;
+			}else{
+				complete = false;
+			}
+		})
+		if(complete){
+			$('input[name="commit"').show()
+		}
+	});
+});

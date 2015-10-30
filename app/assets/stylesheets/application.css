@@ -7,7 +7,131 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require normalize-rails
  *= require 'reset'
  *= require_self
  *= require_tree .
  */
+
+
+
+ body{
+ 	background:#BCBCBC;
+ 	font-family: helvetica, arial, sans-serif;
+ }
+ header{
+ 	background-color: #3299BB;
+ 	height: 40px;
+ 	border-bottom: 3px solid #103947;
+ 	padding: 20px 0px;
+ 	margin-bottom: 1px;
+ }
+ header h1{
+  display: inline-block;
+  width: 75%;
+ 	font-size: 24px;
+ 	font-weight: bold;
+ 	margin:5px 0 0 20px;
+ 	color: #fff;
+ }
+ .question-wrapper div{
+ 	background: #fff;
+ 	border-radius: 1px;
+ 	width: 90%;
+ 	padding: 3%;
+ 	margin: 1px 1% 1px 0px;
+ 	box-shadow: 1px 1px 1px #e0e0e0;
+ }
+ .question-wrapper{
+ 	width: 70%;
+ 	float: left;
+ 	padding-top: 1%;
+ }
+
+ .question-wrapper div h3{
+ 	font-size: 1.4em;
+ 	margin-bottom: 5px;
+ }
+
+ .question-wrapper div h4{
+ 	display:inline-block;
+ }
+
+ .question-wrapper div .tag
+ ,.tag-cloud div{
+ 	color:white;
+ 	font-weight:bold;
+ 	background: #3299BB;
+ 	border: 1px solid #3299BB;
+ 	border-radius: 2px;
+ 	display: inline-block;
+ 	padding: 5px;
+ 	padding-left: 3px;
+ 	margin:2px;
+ 	cursor: pointer;
+ }
+ .question-wrapper div .tag{
+   display: inline;
+ }
+
+ form{
+ 	background-color: #fff;
+ 	padding: 2%;
+ 	width: 50%;
+ 	display: none;
+ 	position: fixed;
+ 	top:40%;
+ 	left:25%;
+ 	border-radius: 3px;
+ 	color: #3299BB;
+ 	font-weight: bold;
+ 	font-size: 1.2em;
+ 	z-index: 102;
+ }
+ form::before{
+ 	left: 97.5%;
+ 	top: 0px;
+ 	content: "x";
+ 	position: absolute;
+ 	background: white;
+ 	/*border: 10px solid transparent;*/
+ 	border-bottom: black;
+ }
+ .tag-cloud{
+ 	width: 20%;
+ 	float: left;
+ 	margin: 1%;
+ 	background-color: #fff;
+ 	padding: 20px;
+
+ }
+
+ .overlay{
+ 	display: none;
+ 	position: fixed;
+ 	width: 100%;
+ 	height: 100%;
+ 	background-color: rgba(0,0,0,.6);
+ 	z-index: 100;
+ 	top: 0px;
+ }
+ button{
+ 	border: none;
+ 	background: #3299BB;
+ 	color: white;
+ 	font-size: 1.2em;
+ 	padding: 5px;
+ }
+ label{
+ 	width:15%;
+ 	display: inline-block;
+ }
+ input{
+ 	margin: 1%;
+ 	width: 100%;
+ }
+ .new-question{
+   width: 20%;
+ 	margin-right:5%;
+ }

@@ -1,6 +1,6 @@
 
 <div class="new-question-form">
-	<%= form_for :question, url: {:action => "create"} do |f| %>
+	<%= form_for :question, url: {:action => "create"}, remote: true do |f| %>
 
 		<div>
 			<%= f.label :question %>
@@ -13,7 +13,7 @@
 		</div>
 		<% end %>
 		<div class="button">
-				<%= f.submit %>
+				<%= f.submit :Submit %>
 		</div>
 	<% end %>
 </div>
